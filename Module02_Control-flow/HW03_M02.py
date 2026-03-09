@@ -32,19 +32,49 @@ employees = [
 ## Let's make this a function so we can reuse it in Part D
 def employee_classification (employees):
     ec_list = []
+    print("Part B:")
     for e in employees:
-    
-ec_list = employee_classification(employees)
+            avg_score = sum(e["performance_scores"]) / len(e["performance_scores"])
+
+            if avg_score >= 4.5:
+                classification = "Excellent"
+            elif 3.5 <= avg_score <= 4.4:
+                classification = "Good"
+            else:
+                classification = "Needs Improvement"
+
+            print("Employee:", e["name"], "\tClassification:", classification)
+
+            ec_list.append({
+                "name": e["name"],
+                "department": e["department"],
+                "classification": classification
+            })
+
+    return ec_list
+
 
 
 ### Part C. Find the employee with the highest salary in the "Engineering" department, and
 highest_salary = 0
 for e in employees:
     if e["department"]=="Engineering":
-
+        if e["salary"] > highest_salary:
+            highest_salary = e["salary"]
+            highest_paid_employee = e["name"]
+print("Part C:")
+print("Highest paid employee in Engineering:", highest_paid_employee)
+print("Salary:", highest_salary)
 
 ### Part D. Print a dictionary where the keys are the department names and the values are lists of employee names who belong to the "Excellent" category in each department.
-excellent_emp = {}
+excellent_emp  = {}
 ec_list = employee_classification(employees)
 
 for e in ec_list:
+    if e["classification"] == "Excellent":
+        dept = e["department"]
+        if dept not in excellent_emp:
+            excellent_emp[dept] = []
+        excellent_emp[dept].append(e["name"])
+
+print("Part D:", excellent_emp)
