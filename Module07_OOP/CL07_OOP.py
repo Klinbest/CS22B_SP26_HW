@@ -2,56 +2,46 @@
 
 class Car:
     ## Initializer method - set up the attributes for Car class
-    def __init__(self, make, model, color):
-        self.make = make
-        self.model = model
-        self.color = color
+    def __init__
 
     def get_description(self):
         '''Instance method that returns a string description of the car.'''
-        # return f"The {self.make} {self.model} is a {self.color} color."  
-        return "The {} {} is a {} color.".format(self.make, self.model, self.color)
-
+    
+    
 ## Instantiate a Car object. Instance attributes 
 toyota_camry = Car("Toyota", "Camry", "blue")
-honda_civic = Car("Honda", "Civic", "silver")
+
 
 ## Call our instance method
 print(toyota_camry.get_description())
-print(honda_civic.get_description())
+
 
 ### Child class that inherits from Car
 class GasCar(Car):
     def __init__(self, make, model, color, fuel_tank_size):
-        super().__init__(make, model, color)  # Call the initializer of the parent class
-        self.fuel_tank_size = fuel_tank_size  # New attribute specific to GasCar
-
+       
     def get_fuel_tank_info(self):
         '''Instance method that returns a string description of the fuel tank.'''
-        return "The {} {} has a {} gallon fuel tank.".format(self.make, self.model, self.fuel_tank_size)
-
+        
+        
 class ElectricCar(Car):
     def __init__(self, make, model, color, battery_size):
-        super().__init__(make, model, color)  # Call the initializer of the parent class
-        self.battery_size = battery_size  # New attribute specific to ElectricCar
-
+       
     def get_battery_info(self):
         '''Instance method that returns a string description of the battery.'''
-        return "The {} {} has a {} kWh battery.".format(self.make, self.model, self.battery_size)
-
+       
+       
 class HybridCar(Car):
     def __init__(self, make, model, color, fuel_efficiency):
-        super().__init__(make, model, color)  # Call the initializer of the parent class
-        self.fuel_efficiency = fuel_efficiency  # New attribute specific to HybridCar
-
+        
     def get_fuel_efficiency_info(self):
         '''Instance method that returns a string description of the fuel efficiency.'''
-        return "The {} {} has a fuel efficiency of {} MPG.".format(self.make, self.model, self.fuel_efficiency) 
+        
  
 ### Example usage of child classes
 gas_car = GasCar("Ford", "Mustang", "red", 16)
 print(gas_car.get_description())
-# print(gas_car.get_fuel_tank_info())
+
 
 ##### Example of superclass and subclass ####
 ## We will create a class called Circle that has 
@@ -59,18 +49,54 @@ print(gas_car.get_description())
 # methods area() and circumference()   
 
 class Circle:
-    def __init__(self, radius):
-        self.radius = radius
+    def __init__():
         
-    def area(self):
-        area = 3.14 * self.radius ** 2
-        return area
+        
+    def area():
+       
     
-    def circumference(self):
-        circumference = 2 * 3.14 * self.radius
-        return circumference
+    def circumference():
+        
     
 ## Use case: Create an instance of the Circle class and call the area and circumference methods to verify that they work correctly.
-my_circle = Circle(5)
+my_circle = 
 print("Area of the circle:", my_circle.area())
-print("Circumference of the circle:", my_circle.circumference())
+
+
+### Now we will create a subclass called Cylinder that inherits from parent class Circle
+# Using super(), will set .radius attribute from inherited superclass Circle.__init__()
+# Define new methods surface_area() and volume() that calculate the surface area and volume of the cylinder using the inherited attribute
+class Cylinder():
+    def __init__():
+        
+    def surface_area():
+        base_area =   # Area of the circular base
+        lateral_area =  # Lateral surface area is circumference of base * height
+        total_surface_area =  # SA is 2x base * lateral
+   
+
+    def volume(self):
+        base_area = # Area of the circular base
+        volume =  # Vol is base * height
+
+
+## Use case: Create an instance of the Cylinder class and call the surface_area and volume methods to verify that they work correctly.
+my_cylinder 
+print("Surface area of the cylinder:", my_cylinder.surface_area())
+
+
+### Now we creat a subclass Spheres that inherits from parent class Circle
+# Using super(), will set .radius attribute from inherited superclass Circle.__init__()
+# Define new methods surface_area() and volume() that calculate the surface area and volume of the sphere using the inherited attribute
+class Sphere():
+    
+    def surface_area():
+        surface_area =   # SA 4x area 
+        
+
+    def volume(self):
+        volume =  # Vol is (4/3)*pi*r^3
+       
+    
+## Use case: Create an instance of the Sphere class and call the surface_area and volume methods to verify that they work correctly.
+my_sphere = 
